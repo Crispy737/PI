@@ -1,0 +1,312 @@
+/*
+    styles.css - Portafolio Ibero - Minimalista Oscuro
+    Combinación de colores: Negro (#1a1a1a), Gris Oscuro (#2a2a2a), Morado (#8a2be2), Blanco (#f0f0f0).
+*/
+
+/* 1. Variables CSS (Configuración Global) */
+:root {
+    --color-fondo-principal: #1a1a1a;    /* Negro muy oscuro */
+    --color-fondo-secundario: #2a2a2a;   /* Gris oscuro para tarjetas y secciones */
+    --color-morado-principal: #8a2be2;  /* Morado brillante para acentos */
+    --color-morado-claro: #9d4eff;      /* Morado más claro para hover/botones */
+    --color-texto-claro: #f0f0f0;       /* Blanco roto para texto principal */
+    --color-texto-secundario: #b0b0b0;  /* Gris claro para descripciones */
+    --color-borde: #444;                /* Borde sutil */
+    --padding-base: 20px;
+    --border-radius: 8px;
+}
+
+/* 2. Reset y Estilos Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--color-texto-claro); 
+    background-color: var(--color-fondo-principal); 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1000px;
+    width: 90%;
+    margin: var(--padding-base) auto;
+    flex-grow: 1; 
+}
+
+/* 3. Estilos de Encabezado y Navegación */
+.main-header {
+    background-color: var(--color-fondo-secundario); 
+    color: var(--color-texto-claro);
+    padding: 15px var(--padding-base);
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); 
+}
+
+.main-header h1 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: var(--color-morado-principal); 
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estado activo para resaltar la página actual */
+nav a.active {
+    background-color: var(--color-morado-principal); 
+    color: var(--color-texto-claro);
+    font-weight: bold;
+}
+
+nav a:not(.active):hover {
+    background-color: var(--color-morado-claro); 
+    color: var(--color-texto-claro);
+}
+
+/* 4. Estilos de Secciones y Contenido */
+section {
+    background-color: var(--color-fondo-secundario); 
+    padding: 30px; /* Usando valor fijo en lugar de multiplicación */
+    margin-bottom: var(--padding-base);
+    border-radius: var(--border-radius);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3); 
+    border: 1px solid var(--color-borde); 
+}
+
+.section-title {
+    color: var(--color-morado-principal); 
+    border-bottom: 3px solid var(--color-morado-claro); 
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+    font-size: 1.6em;
+}
+
+.descripcion {
+    margin-top: 15px;
+    font-style: italic;
+    color: var(--color-texto-secundario); 
+}
+
+/* 5. Estilos de Proyectos (Tarjetas/Grid) */
+.proyectos-list {
+    list-style: none;
+    display: grid;
+    gap: var(--padding-base);
+    padding: 0;
+    margin-top: var(--padding-base);
+}
+
+.proyecto-card {
+    border: 1px solid var(--color-borde);
+    padding: 15px;
+    border-left: 5px solid var(--color-morado-principal); 
+    border-radius: var(--border-radius);
+    background-color: #333; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); 
+}
+
+.proyecto-card h3 {
+    color: var(--color-morado-claro); 
+}
+
+.descripcion-proyecto {
+    color: var(--color-texto-secundario); 
+}
+
+.proyecto-link {
+    color: var(--color-morado-principal);
+    font-weight: bold;
+    text-decoration: none;
+}
+.proyecto-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Grid para proyectos */
+@media (min-width: 600px) {
+    .proyectos-list {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/* 6. Estilos de Botones y Formulario */
+.button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.primary-button {
+    background-color: var(--color-morado-principal);
+    color: var(--color-texto-claro);
+}
+
+.primary-button:hover {
+    background-color: var(--color-morado-claro);
+    color: var(--color-texto-claro);
+}
+
+.large-button {
+    padding: 12px 20px;
+    font-size: 1.1em;
+}
+
+.secondary-button {
+    background-color: var(--color-fondo-secundario);
+    color: var(--color-morado-principal);
+    border: 1px solid var(--color-morado-principal);
+}
+
+.secondary-button:hover {
+    background-color: var(--color-morado-principal);
+    color: var(--color-texto-claro);
+}
+
+/* Estilos del formulario (Fondo oscuro, texto claro) */
+.proyecto-form {
+    margin-top: 25px;
+    border: 1px dashed var(--color-morado-principal);
+    padding: var(--padding-base);
+    border-radius: var(--border-radius);
+    background-color: #222; 
+}
+
+.proyecto-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 500;
+    color: var(--color-morado-claro); 
+}
+
+.proyecto-form input,
+.proyecto-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--color-borde);
+    border-radius: 4px;
+    background-color: #333; 
+    color: var(--color-texto-claro); 
+}
+.proyecto-form input::placeholder,
+.proyecto-form textarea::placeholder {
+    color: var(--color-texto-secundario); 
+}
+
+.hidden {
+    display: none;
+}
+
+/* 7. Estilos de Contacto (Mantengo solo si la página contacto.html existe) */
+/* Se eliminaron los estilos de contacto. */
+
+/* 8. Estilos del Pie de Página (Footer) */
+.site-footer {
+    background-color: #0d0d0d; 
+    color: #888;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.85em;
+    width: 100%;
+    border-top: 1px solid var(--color-borde);
+}
+
+/* === AJUSTES DE MEDIOS Y GALERÍA === */
+
+/* Ajuste de Responsividad para el Iframe de Tinkercad */
+.tinkercad-embed-container {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 62.55%; 
+    height: 0;
+    overflow: hidden;
+}
+
+.tinkercad-embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--color-morado-principal); 
+    border-radius: var(--border-radius);
+}
+
+/* 9. Estilos de Galería de Proyectos (Optimizado para tamaño) */
+.proyecto-galeria {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 15px;
+    margin: 20px 0;
+    justify-content: center; 
+}
+
+.proyecto-galeria figure {
+    /* Define el tamaño para que haya dos columnas en pantallas grandes */
+    flex: 1 1 calc(50% - 15px); 
+    /* Limita el tamaño máximo para que no se vean demasiado grandes */
+    max-width: 350px; 
+    margin: 0;
+    text-align: center;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background-color: var(--color-fondo-principal);
+}
+
+.galeria-img {
+    width: 100%; /* Asegura que la imagen ocupe el ancho máximo de la figura */
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.galeria-img:hover {
+    transform: scale(1.03); 
+}
+
+.proyecto-galeria figcaption {
+    font-size: 0.8em;
+    padding: 8px;
+    color: var(--color-morado-claro);
+    background-color: #383838;
+}
+
+/* Ajuste de Responsividad para la galería en móviles */
+@media (max-width: 700px) {
+    .proyecto-galeria figure {
+        flex: 1 1 100%; /* Ocupa el 100% en pantallas pequeñas */
+        max-width: 100%;
+    }
+}
