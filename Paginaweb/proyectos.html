@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos – Estudiante de Ingeniería Ibero</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>Proyectos y Trabajos</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="proyectos.html" class="active">Proyectos</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section id="proyectos" class="section-proyectos">
+            <h2 class="section-title">🛠️ Mis Trabajos Académicos</h2>
+            
+            <ul id="lista-proyectos" class="proyectos-list">
+                
+                <li class="proyecto-card">
+                    <h3>Diseño 3D: Móvil Impreso en PVC</h3>
+                    <p class="descripcion-proyecto">
+                        Diseño paramétrico de un móvil utilizando **Tinkercad**. El modelo fue optimizado para su impresión en una impresora 3D de filamento **PVC**, explorando la relación entre software de diseño y fabricación aditiva.
+                    </p>
+                    
+                    <div class="tinkercad-embed-container">
+                        <iframe width="725" height="453" src="https://www.tinkercad.com/embed/3R8VmZMw938?editbtn=1&simlab=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+                    </div>
+                    
+                    <a href="https://www.tinkercad.com/things/3R8VmZMw938" target="_blank" class="proyecto-link">Ver Diseño en Tinkercad 🔗</a>
+                </li>
+                
+                <li class="proyecto-card">
+                    <h3>Diseño y Fabricación de PCB Regulador LED</h3>
+                    <p class="descripcion-proyecto">
+                        Diseño de un circuito regulador de intensidad para un LED, implementado en una placa de circuito impreso. El proceso incluyó la simulación del circuito en **Tinkercad Circuits** y el diseño de la placa en **EasyEDA**, seguido por el fresado y soldado de componentes.
+                    </p>
+                    
+                    <div class="tinkercad-embed-container">
+                        <iframe width="725" height="453" src="https://www.tinkercad.com/embed/94c2GWyXRcS?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+                    </div>
+                    
+                    <div class="proyecto-galeria">
+                        <figure>
+                            <img src="IMG_2845.jpg" alt="Circuito PCB con componentes montados, incluyendo un potenciómetro, condensador, chip y LED." class="galeria-img">
+                            <figcaption>Vista superior del PCB con componentes soldados.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="IMG_2844.jpg" alt="Vista inferior de la placa de cobre con las pistas de circuito impreso y puntos de soldadura." class="galeria-img">
+                            <figcaption>Vista inferior de las pistas de cobre diseñadas en EasyEDA y fresadas.</figcaption>
+                        </figure>
+                    </div>
+                    
+                    <a href="#" target="_blank" class="proyecto-link">Ver Diagrama de Circuito 🔗</a>
+                </li>
+
+                <li class="proyecto-card">
+                    <h3>Corte Láser: Diseño y Fabricación de Cubo en MDF</h3>
+                    <p class="descripcion-proyecto">
+                        Proyecto de **fabricación digital** que involucró el diseño paramétrico de un cubo con uniones tipo dedo (finger joint) usando **Tinkercad**. El archivo vectorial fue optimizado y cortado con precisión en una máquina de corte láser sobre material **MDF**.
+                    </p>
+                    
+                    <div class="proyecto-galeria">
+                         <figure style="flex: 1 1 100%; max-width: 100%;">
+                            <img src="IMG_2846.jpg" alt="Piezas de cubo cortadas con láser en MDF." class="galeria-img">
+                            <figcaption>Las seis caras del cubo, cortadas con precisión para ensamblaje sin adhesivos.</figcaption>
+                        </figure>
+                    </div>
+                    
+                    <a href="#" target="_blank" class="proyecto-link">Ver Archivo de Corte 🔗</a>
+                </li>
+                
+            </ul>
+
+            <button id="btn-mostrar-formulario" class="button primary-button">➕ Agregar Nuevo Trabajo</button>
+
+            <form id="formulario-proyecto" class="proyecto-form hidden">
+                <h3>Añadir Nuevo Proyecto</h3>
+                <label for="nombre-proyecto">Nombre:</label>
+                <input type="text" id="nombre-proyecto" required>
+
+                <label for="desc-proyecto">Descripción:</label>
+                <textarea id="desc-proyecto" required></textarea>
+
+                <label for="link-proyecto">Enlace (URL):</label>
+                <input type="url" id="link-proyecto" value="#">
+
+                <button type="submit" class="button secondary-button">Guardar Proyecto</button>
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            &copy; <span id="current-year">2024</span> Victor Hernandez Loaeza  | Estudiante Ibero.
+        </p>
+    </footer>
+
+    <script src="script.js"></script> 
+</body>
+</html>
